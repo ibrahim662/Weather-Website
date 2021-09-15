@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import Home from "./components/home";
 import Weather from "./components/weather";
 import Particles from 'react-particles-js';
-import NavB from './components/Navbar/navbar'
+import NavB from './components/Navbar/navbar';
+import Register from "./components/register/register";
+import Login from "./components/login/login";
+import Profil from "./components/profil/profil"
 
 function App() {
   const params = {
@@ -69,9 +72,15 @@ function App() {
           <Home />
 
       </Route>
-      <Route path="/weather">
+      <Route path="/register">
           
-          <Weather />
+          <Register />
+      </Route>
+      <Route path="/login">
+          <Login />
+      </Route>
+      <Route path="/profil">
+          <Profil />
       </Route>
     </BrowserRouter>
     </div>
