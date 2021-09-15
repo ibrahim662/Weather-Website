@@ -1,0 +1,77 @@
+body,
+html,
+.particles,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Mountains of Christmas';
+  text-align: center;
+  background-color: black;
+  height: 100%;
+  color: #fff
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  z-index: -5;
+  
+}
+
+.all{
+    z-index: 199;
+}
+
+#title{
+    margin-top: 40px;
+    color: orange
+}
+
+#title_p{
+    margin-top: 30px
+}
+
+#btn1{
+    margin-top: 30px;
+    border: 1px solid black;
+    color:black;
+    padding:10px 20px;
+    font-size:12px;
+    text-decoration:none;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+#btn1:hover{
+    border:none;
+    transition: 0.3s ease-in-out;
+    background-color: black;
+    color: white;
+
+}
+
+.icn-1{
+    height: 50px;
+    border-radius: 50%;
+}
+
+#img_carousel{
+height: 600px;
+background-color: transparent
+}
+
+#img_carousel1{
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(243, 229, 229, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#img_carousel1:hover{
+    box-shadow: 0 5px 15px rgba(93, 82, 187, 0.3);
+}
