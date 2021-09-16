@@ -9,8 +9,7 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const session = require("express-session");
 const jwt = require('jsonwebtoken');
-
-
+const jwt_decode = require("jwt-decode");
 
 app.use(bodyParser.json());
 
@@ -66,6 +65,7 @@ app.post('/register', function (req, res) {
 app.post('/login', function (req, res) {
   const email = req.body.email
   const password = req.body.password;
+ 
 
   db.query("SELECT * FROM users WHERE email = ? AND password = ?",
     [email, password],
@@ -76,11 +76,10 @@ app.post('/login', function (req, res) {
 
       if (result.length > 0) {
         bcrypt.compare(password, result[0].password, (error, response) => {
-
           res.status(200).json({
-            userId: db.id,
+            email: email,
             token: jwt.sign(
-              { userId: db.id },
+              { userId: email },
               'RANDOM_TOKEN_SECRET',
               { expiresIn: '24h' } 
             )
@@ -95,21 +94,27 @@ app.post('/login', function (req, res) {
   );
 })
 
-app.get('/profil', function(req, res, next) {
-    
-  	userId = db.id;
 
-  db.query("SELECT * FROM users ", function (err, result, fields) {
+app.get('/profil', function(req, res, next) {
+var to = req.headers.authorization;
+var TokenEmail = jwt_decode(to);
+// console.log(TokenEmail.userId)
+
+  db.query("SELECT * FROM users WHERE email = ?",[TokenEmail.userId],
+  function (err, result) {
     if (err) throw err;
     console.log(result);
     res.send(result);
-})});
+   
+  }
+
+)});
 
 
 app.post("/weather", (req, res) => {
   const ip = req.body.data.ip
 
-  axios.get("http://api.worldweatheronline.com/premium/v1/weather.ashx?key=afb937f8e81c4f1385c80611211509&q="+ip+"&format=json&num_of_days=5", {
+  axios.get("http://api.worldweatheronline.com/premium/v1/weather.ashx?key=17fcdb6758684e6785b114437211609&q="+ip+"&format=json&num_of_days=5", {
     data:{
         ip: req.body.ip,
       },
@@ -125,3 +130,23 @@ app.post("/weather", (req, res) => {
       })
     
     })
+
+    app.post("/cities", (req, res) => {
+      const ip = req.body.data.ip
+    
+      axios.get("http://api.worldweatheronline.com/premium/v1/weather.ashx?key=17fcdb6758684e6785b114437211609&q="+ip+"&format=json&num_of_days=5", {
+        data:{
+            ip: req.body.ip,
+          },
+          
+        })
+          .then(response => {
+            console.log(response.data)
+            res.send(response.data)
+          })
+          .catch(error => {
+            console.log(error.message)
+        
+          })
+        
+        })

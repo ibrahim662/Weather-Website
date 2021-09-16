@@ -1,0 +1,23 @@
+.inT{
+    color: rgb(255, 255, 0);
+    margin:10px;
+    width: 80%;
+        padding: 18px 22px;
+    border: none;
+    border-radius: 5px;
+    background-color: #9480aa85;  
+}
+.inT::placeholder {
+    color: white;
+    transition: all .2s ease-in-out;
+  }
+
+  .inT:focus::placeholder{
+    transform: scale(2.1);
+  }
+
+  @media (max-width: 500px) {
+    .inT:focus::placeholder {
+        transform: scale(4.1);
+    }
+  }

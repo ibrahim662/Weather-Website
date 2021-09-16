@@ -42,13 +42,17 @@ function Login({}) {
         
         setToken(token);
         setUser(response.user)
-        localStorage.setItem("user", JSON.stringify(response))
+        console.log(response);
+        localStorage.setItem("user", JSON.stringify(response.data))
         console.log(response)
     }
 
     
 
     return (
+
+        
+             
         <div className="all">
             <div class="container" id="container">
                 <div class="form-container sign-in-container">
@@ -63,8 +67,7 @@ function Login({}) {
                             onChange={(e) =>
                                 setEmail(e.target.value)
                             }
-                        />
-
+                            />
                         <input class="pass"
                             type="password"
                             align="center"
@@ -74,7 +77,7 @@ function Login({}) {
                                 setPassword(e.target.value)
                             }
                         />
-                        <button class="submit">connexion</button>
+                        <button class="submit" >connexion</button>
                     </form>
 
 

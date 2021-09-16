@@ -187,6 +187,10 @@ export default function Home() {
             </div>
           </div>
         ))}
+
+        <h2>Or maybe you want to see other cities ?</h2>
+        <a id="cities" href="/cities">Here </a>
+
       </div>
     );
   }

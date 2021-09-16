@@ -6,7 +6,8 @@ import Particles from 'react-particles-js';
 import NavB from './components/Navbar/navbar';
 import Register from "./components/register/register";
 import Login from "./components/login/login";
-import Profil from "./components/profil/profil"
+import Profil from "./components/profil/profil";
+import Cities from "./components/cities/cities"
 
 function App() {
   const params = {
@@ -77,10 +78,15 @@ function App() {
           <Register />
       </Route>
       <Route path="/login">
+      <NavB/>
           <Login />
       </Route>
       <Route path="/profil">
-          <Profil />
+        <Profil />
+      </Route>
+      <Route path="/cities">
+        <NavB/>
+          <Cities />
       </Route>
     </BrowserRouter>
     </div>

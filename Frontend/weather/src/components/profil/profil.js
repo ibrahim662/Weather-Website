@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { useState, useEffect } from "react";
 import "./profil.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Navbar, Container, Nav } from "react-bootstrap";
+
 
 
 
@@ -10,7 +13,11 @@ export function Profil() {
     const [user, setUser] = useState()
     const [error, setError] = useState(null);
     const [showuser, setShowUser] = useState([]);
+
+
     useEffect(() => {
+      const em = JSON.parse(localStorage.getItem('user'));
+      // console.log(em.token)
           /*var requestOptions = {
               method: 'GET',
               redirect: 'follow'
@@ -19,6 +26,9 @@ export function Profil() {
           fetch("http://localhost:3001/profil" /*, requestOptions*/, {
           method: "GET",
           redirect: 'follow',
+          headers: {
+            'Authorization': 'Bearer ' + em.token,
+          }
           })
           // .then(response => response.text())
           // .then(result => console.log(result))
@@ -37,7 +47,9 @@ export function Profil() {
                   console.log(error);
               }
               );
+              // console.log(JSON.parse(localStorage.getItem("user")))
           }, []);
+
 
 function logout()  {
     sessionStorage.clear();
@@ -54,25 +66,40 @@ useEffect(() => {
 
   }, []);
 
-    return (
+    return (user) ? (
+      <div>
+
+      <Navbar className="Navv" collapseOnSelect expand="lg" variant="dark">
+      <Container fluid>
+        <Navbar.Brand className="brnd">WORLD WEATHER</Navbar.Brand>
+        <Navbar.Toggle id="k" aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="navbar-nav ml-auto">
+            <ul className="topnav">
+              <li>
+                <a className="btn" href="/home">Go back to home</a>
+                </li>
+              <li>
+                <a className="btn" onClick={logout}>
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
         <div className="Dashboard" >
-            <button onClick={logout}>Logout</button>
-            {showuser.map((user) => (
-        <div>
-                <div>Bonjour, {user.username}</div>
-                <h2></h2>
-                
-                <div class="">
-                  <div class="">
-                  
-                   <h5>{user.username}</h5>
-            
-                  </div>
-       
-                </div>
-              </div>
+          {showuser.map((user) => (
+              <div>
+                <h2>Bonjour, {user.username}</h2>
+             </div>
               ))}
         </div>
+              </div>
+    ) : (
+     <h1>go back</h1>
+    
     );
     
      
