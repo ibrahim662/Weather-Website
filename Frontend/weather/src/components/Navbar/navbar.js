@@ -4,7 +4,6 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import "./nav.css";
 
 function NavB() {
-  const [Navv, setNavbar] = useState(false);
   const [user, setUser] = useState();
 
   function logout() {
@@ -30,12 +29,14 @@ function NavB() {
           <Nav className="navbar-nav ml-auto">
             <ul className="topnav">
               <li>
-                <a className="btn" href="/profil">Profile</a>
-                </li>
-              <li>
-                <a className="btn" onClick={logout}>
-                  Logout
+                <a className="btn" href="/profil">
+                  Profile
                 </a>
+              </li>
+              <li>
+                <button className="btn" onClick={logout}>
+                  Logout
+                </button>
               </li>
             </ul>
           </Nav>
@@ -50,6 +51,11 @@ function NavB() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="navbar-nav ml-auto">
             <ul className="topnav">
+              <li>
+                <a className="btn" href="/home">
+                  Home
+                </a>
+              </li>
               <li>
                 <a className="btn" href="/login">
                   Login

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-* { 
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,14 +13,12 @@ body {
 
 .brnd {
   font-size: 25px;
-
 }
-
 
 .Navv {
   /* height: 60px; */
   background-color: transparent;
-  z-index:90;
+  z-index: 90;
   background: linear-gradient(90deg, #101727 0%, #101727 100%);
 }
 
@@ -29,7 +27,7 @@ body {
   transition: 0.9s ease-in-out;
 }
 
-.collapsed{
+.collapsed {
   width: auto !important;
 }
 
@@ -40,32 +38,36 @@ ul.topnav {
   overflow: hidden;
 }
 
-ul.topnav li {float: left;}
+ul.topnav li {
+  float: left;
+}
 
 ul.topnav li a {
   display: block;
   color: white;
-    padding: 14px 16px;
+  padding: 14px 16px;
   text-decoration: none;
 }
 
 @media screen and (max-width: 600px) {
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
+  ul.topnav li.right,
+  ul.topnav li {
+    float: none;
+  }
 }
 
-.btn{
-  color:#999;
-  padding:10px 20px;
-  font-size:12px;
-  text-decoration:none;
-  letter-spacing:2px;
-  text-transform:uppercase;
+.btn {
+  color: #999;
+  padding: 10px 20px;
+  font-size: 12px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.btn:hover{
-  border:none;
-  background:#fff;
-  padding:20px 20px;
+.btn:hover {
+  border: none;
+  background: #fff;
+  padding: 20px 20px;
   color: darkgray;
 }

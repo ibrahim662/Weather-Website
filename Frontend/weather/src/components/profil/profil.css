@@ -1,26 +1,24 @@
 .nav {
-    color: white;
-	position: sticky;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 60px;
-	top: 0;
-    background: black;
+  color: white;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  top: 0;
+  background: black;
 }
 
-	.__title {
-		margin: 0px 30px;
-	}
-	.__item {
-		display: inline-block;
-		margin: 0px 30px;
-        height: 30px;
-        width: 30px;
-		margin-right: 200px;
-	}
-	.bb{
-		margin-left: 200px;
-	}
-
-	
+.__title {
+  margin: 0px 30px;
+}
+.__item {
+  display: inline-block;
+  margin: 0px 30px;
+  height: 30px;
+  width: 30px;
+  margin-right: 200px;
+}
+.bb {
+  margin-left: 200px;
+}

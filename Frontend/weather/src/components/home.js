@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel } from 'react-bootstrap';
-import "./home.css"
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Carousel } from "react-bootstrap";
+import "./home.css";
 
 export default function Home() {
   const [ip, setIp] = useState("");
@@ -74,11 +73,13 @@ export default function Home() {
   } else {
     return (
       <div className="all">
-        <h2 id ="title" >Welcome to WORLD WEATHER 🌞</h2>
+        <h2 id="title">Welcome to WORLD WEATHER 🌞</h2>
         <h3 id="title_p">
           Wonder what's the weather today in your location ? 🤔
         </h3>
-        <button id="btn1"onClick={getW}>See what does feels like today </button>
+        <button id="btn1" onClick={getW}>
+          See what does feels like today{" "}
+        </button>
         {/* {weather.map((weathers) => (
             <div>
             <h1>{weathers.data.current_condition}</h1>
@@ -93,93 +94,120 @@ export default function Home() {
 
               <span className="input-label">
                 {" "}
-                Weather:{" "}
-                <br></br>
-                <img className="icn-1"
-                    src={weather[item].current_condition[0].weatherIconUrl[0].value}
+                Weather: <br></br>
+                <img
+                  className="icn-1"
+                  src={
+                    weather[item].current_condition[0].weatherIconUrl[0].value
+                  }
+                  alt="weatherImg"
                 ></img>
                 <br></br>
                 {weather[item].current_condition[0].weatherDesc[0].value}
               </span>
-               <p> &#8593; {weather[item].weather[0].maxtempC}° &nbsp; &nbsp; &#8595; {weather[item].weather[0].mintempC}°</p>
+              <p>
+                {" "}
+                &#8593; {weather[item].weather[0].maxtempC}° &nbsp; &nbsp;
+                &#8595; {weather[item].weather[0].mintempC}°
+              </p>
             </div>
             <div>
               <h2 id="title">Future days</h2>
               <h2>👇</h2>
               <Carousel>
                 <Carousel.Item>
-                  <div id="img_carousel"
-                    className="d-block w-100"
-                    
-                
-                  ></div>
+                  <div id="img_carousel" className="d-block w-100"></div>
                   <Carousel.Caption>
                     <h3>{weather[item].weather[1].date}</h3>
-                    <img id="img_carousel1"
-                    src={weather[item].weather[1].hourly[4].weatherIconUrl[0].value}
-                ></img>
+                    <img
+                      id="img_carousel1"
+                      src={
+                        weather[item].weather[1].hourly[4].weatherIconUrl[0]
+                          .value
+                      }
+                      alt="weatherImg"
+                    ></img>
                     <p>
-                    {weather[item].weather[1].hourly[4].weatherDesc[0].value}
+                      {weather[item].weather[1].hourly[4].weatherDesc[0].value}
                     </p>
                     <p>
-                    <p> &#8593; {weather[item].weather[1].maxtempC}° &nbsp; &nbsp; &#8595; {weather[item].weather[1].mintempC}°</p>
+                      <p>
+                        {" "}
+                        &#8593; {weather[item].weather[1].maxtempC}° &nbsp;
+                        &nbsp; &#8595; {weather[item].weather[1].mintempC}°
+                      </p>
                     </p>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                <div id="img_carousel"
-                    className="d-block w-100"
-                    
-                
-                  ></div>
+                  <div id="img_carousel" className="d-block w-100"></div>
                   <Carousel.Caption>
                     <h3>{weather[item].weather[2].date}</h3>
-                    <img id="img_carousel1"
-                    src={weather[item].weather[2].hourly[4].weatherIconUrl[0].value}
-                ></img>
+                    <img
+                      id="img_carousel1"
+                      src={
+                        weather[item].weather[2].hourly[4].weatherIconUrl[0]
+                          .value
+                      }
+                      alt="weatherImg"
+                    ></img>
                     <p>
-                    {weather[item].weather[2].hourly[4].weatherDesc[0].value}
+                      {weather[item].weather[2].hourly[4].weatherDesc[0].value}
                     </p>
                     <p>
-                    <p> &#8593; {weather[item].weather[2].maxtempC}° &nbsp; &nbsp; &#8595; {weather[item].weather[2].mintempC}°</p>
+                      <p>
+                        {" "}
+                        &#8593; {weather[item].weather[2].maxtempC}° &nbsp;
+                        &nbsp; &#8595; {weather[item].weather[2].mintempC}°
+                      </p>
                     </p>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                <div id="img_carousel"
-                    className="d-block w-100"
-                    
-                
-                  ></div>
+                  <div id="img_carousel" className="d-block w-100"></div>
                   <Carousel.Caption>
                     <h3>{weather[item].weather[3].date}</h3>
-                    <img id="img_carousel1"
-                    src={weather[item].weather[3].hourly[4].weatherIconUrl[0].value}
-                ></img>
+                    <img
+                      id="img_carousel1"
+                      src={
+                        weather[item].weather[3].hourly[4].weatherIconUrl[0]
+                          .value
+                      }
+                      alt="weatherImg"
+                    ></img>
                     <p>
-                    {weather[item].weather[3].hourly[4].weatherDesc[0].value}
+                      {weather[item].weather[3].hourly[4].weatherDesc[0].value}
                     </p>
                     <p>
-                    <p> &#8593; {weather[item].weather[3].maxtempC}° &nbsp; &nbsp; &#8595; {weather[item].weather[3].mintempC}°</p>
+                      <p>
+                        {" "}
+                        &#8593; {weather[item].weather[3].maxtempC}° &nbsp;
+                        &nbsp; &#8595; {weather[item].weather[3].mintempC}°
+                      </p>
                     </p>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                <div id="img_carousel"
-                    className="d-block w-100"
-                    
-                
-                  ></div>
+                  <div id="img_carousel" className="d-block w-100"></div>
                   <Carousel.Caption>
                     <h3>{weather[item].weather[4].date}</h3>
-                    <img id="img_carousel1"
-                    src={weather[item].weather[4].hourly[4].weatherIconUrl[0].value}
-                ></img>
+                    <img
+                      id="img_carousel1"
+                      src={
+                        weather[item].weather[4].hourly[4].weatherIconUrl[0]
+                          .value
+                      }
+                      alt="weatherImg"
+                    ></img>
                     <p>
-                    {weather[item].weather[4].hourly[4].weatherDesc[0].value}
+                      {weather[item].weather[4].hourly[4].weatherDesc[0].value}
                     </p>
                     <p>
-                    <p> &#8593; {weather[item].weather[4].maxtempC}° &nbsp; &nbsp; &#8595; {weather[item].weather[4].mintempC}°</p>
+                      <p>
+                        {" "}
+                        &#8593; {weather[item].weather[4].maxtempC}° &nbsp;
+                        &nbsp; &#8595; {weather[item].weather[4].mintempC}°
+                      </p>
                     </p>
                   </Carousel.Caption>
                 </Carousel.Item>
@@ -189,8 +217,9 @@ export default function Home() {
         ))}
 
         <h2>Or maybe you want to see other cities ?</h2>
-        <a id="cities" href="/cities">Here </a>
-
+        <a id="cities" href="/cities">
+          Here{" "}
+        </a>
       </div>
     );
   }
