@@ -16,7 +16,7 @@ The goal of this project is to build a website which could show our weather.
 
 + Clone this project ( $~git@github.com:ibrahim662/Weather-Website.git ) 
 
-+ $~cd Weather-Website/Frontend 
++ $~cd Weather-Website/Frontend/weather
 + $~npm install
 + $~npm start
 
