@@ -21,7 +21,7 @@ The goal of this project is to build a website which could show our weather.
 + $~npm start
 
 ### Second terminal 
-#### Client side
+#### Server side
 + $~cd Weather-Website/Backend
 + $~npm install
 + $~cd Weather-Website/Backend/server
